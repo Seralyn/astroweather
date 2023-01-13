@@ -51,7 +51,7 @@ const Body = (props) => {
 
     return (
         <div>
-            <div className="mt-8 text-black text-xl">
+            <div className="mt-8 text-gray-200 text-xl">
                 Showing information for:
                 <div className="text-3xl">
                     {currentWeatherData && currentWeatherData.location.name}
@@ -59,18 +59,18 @@ const Body = (props) => {
                     {currentWeatherData && currentWeatherData.location.region}
                     {" - "}
                     {currentWeatherData && currentWeatherData.location.country}
-                    {/* {" - "}
-                    {currentWeatherData && currentWeatherData.location.localtime} */}
+                    {" - "}
+                    {currentWeatherData && currentWeatherData.location.localtime} 
                 </div>
             </div>
-            <div className="text-black text-4xl mt-12">Current Weather</div>
-            <div className="mt-8 flex flex-wrap lg:gap-6 justify-evenly text-black lg:px-32">
+            <div className="text-gray-200 text-4xl mt-12 ">Current Weather</div>
+            <div className="mt-8 flex flex-wrap lg:gap-6 justify-evenly text-gray-200 lg:px-32">
                 <div className="card">
                     <div>
                         <img src={sun} className="weather-icon" alt="" />
                     </div>
-                    <div className="text-2xl">Current Conditions:</div>
-                    <div className="text-xl" id="dataOutputCondition">
+                    <div className="text-2xl text-gray-200">Current Conditions:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCondition">
                         {currentWeatherData &&
                             currentWeatherData.current.condition.text}
                     </div>
@@ -84,22 +84,21 @@ const Body = (props) => {
                             alt=""
                         />
                     </div>
-                    <div className="text-2xl">Temperature:</div>
-                    <div className="text-xl" id="dataOutputTemp">
+                    <div className="text-2xl text-gray-200">Temperature:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputTemp">
                         {currentWeatherData &&
                             currentWeatherData.current.temp_c}{" "}
                         degrees
                     </div>
                 </div>
-
+                
                 <div className="card">
                     <div>
-                        <img src={humidity} className="weather-icon" alt="" />
+                        <img src={cloud} className="weather-icon" alt="" />
                     </div>
-                    <div className="text-2xl">Humidity:</div>
-                    <div className="text-xl" id="dataOutputHumidity">
-                        {currentWeatherData &&
-                            currentWeatherData.current.humidity}{" "}
+                    <div className="text-2xl text-gray-200">Cloud Cover:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {currentWeatherData && currentWeatherData.current.cloud}{" "}
                         %
                     </div>
                 </div>
@@ -108,20 +107,81 @@ const Body = (props) => {
                     <div>
                         <img src={wind} className="h-24" alt="" />
                     </div>
-                    <div className="text-2xl">Wind Speed:</div>
-                    <div className="text-xl" id="dataOutputWindSPD">
+                    <div className="text-2xl text-gray-200">Wind Speed:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputWindSPD">
                         {currentWeatherData &&
                             currentWeatherData.current.wind_kph}{" "}
                         kph
                     </div>
                 </div>
-
+                <div className="card">
+                    <div>
+                        <img src={sunrise} className="weather-icon" alt="" />
+                    </div>
+                    <div className="text-2xl text-gray-200">Sunrise:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {astroWeatherData &&
+                            astroWeatherData.astronomy.astro.sunrise}{" "}
+                    </div>
+                </div>
+                <div className="card">
+                    <div>
+                        <img src={sunset} className="weather-icon" alt="" />
+                    </div>
+                    <div className="text-2xl text-gray-200">Sunset:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {astroWeatherData &&
+                            astroWeatherData.astronomy.astro.sunset}{" "}
+                    </div>
+                </div>
+                <div className="card">
+                    <div>
+                        <img src={moonrise} className="weather-icon" alt="" />
+                    </div>
+                    <div className="text-2xl text-gray-200">Moonrise:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {astroWeatherData &&
+                            astroWeatherData.astronomy.astro.moonrise}{" "}
+                    </div>
+                </div>
+                <div className="card">
+                    <div>
+                        <img src={moonset} className="weather-icon" alt="" />
+                    </div>
+                    <div className="text-2xl text-gray-200">Moonset:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {astroWeatherData &&
+                            astroWeatherData.astronomy.astro.moonset}{" "}
+                    </div>
+                </div>
+                <div className="card">
+                    <div>
+                        <img src={moonphase} className="weather-icon" alt="" />
+                    </div>
+                    <div className="text-2xl text-gray-200">Moon Phase:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {astroWeatherData &&
+                            astroWeatherData.astronomy.astro.moon_phase}{" "}
+                    </div>
+                </div>
+                <div className="card">
+                    <div>
+                        <img src={moonlight} className="weather-icon" alt="" />
+                    </div>
+                    <div className="text-2xl text-gray-200">Moon Illumination:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputCloudCover">
+                        {astroWeatherData &&
+                            astroWeatherData.astronomy.astro
+                                .moon_illumination}{" "}
+                        %
+                    </div>
+                </div>
                 <div className="card">
                     <div>
                         <img src={compass} className="weather-icon" alt="" />
                     </div>
-                    <div className="text-2xl">Wind Direction:</div>
-                    <div className="text-xl" id="dataOutputWindDIR">
+                    <div className="text-2xl text-gray-200">Wind Direction:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputWindDIR">
                         {currentWeatherData &&
                             currentWeatherData.current.wind_dir}
                     </div>
@@ -131,8 +191,8 @@ const Body = (props) => {
                     <div>
                         <img src={gauge} className="weather-icon" alt="" />
                     </div>
-                    <div className="text-2xl">Barometric Pressure:</div>
-                    <div className="text-xl" id="dataOutputBarPress">
+                    <div className="text-2xl text-gray-200">Barometric Pressure:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputBarPress">
                         {currentWeatherData &&
                             currentWeatherData.current.pressure_mb}{" "}
                         mb
@@ -143,98 +203,33 @@ const Body = (props) => {
                     <div>
                         <img src={visibility} className="weather-icon" alt="" />
                     </div>
-                    <div className="text-2xl">Visibility:</div>
-                    <div className="text-xl" id="dataOutputVisibility">
+                    <div className="text-2xl text-gray-200">Visibility:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputVisibility">
                         {currentWeatherData &&
                             currentWeatherData.current.vis_km}{" "}
                         km
                     </div>
                 </div>
-
                 <div className="card">
                     <div>
-                        <img src={cloud} className="weather-icon" alt="" />
+                        <img src={humidity} className="weather-icon" alt="" />
                     </div>
-                    <div className="text-2xl">Cloud Cover:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {currentWeatherData && currentWeatherData.current.cloud}{" "}
+                    <div className="text-2xl text-gray-200">Humidity:</div>
+                    <div className="text-xl text-gray-200" id="dataOutputHumidity">
+                        {currentWeatherData &&
+                            currentWeatherData.current.humidity}{" "}
                         %
                     </div>
                 </div>
+                
             </div>
             {/* CURRENT WEATHER END */}
 
-            {/* ASTRONOMICAL START */}
-            <div className="text-black text-4xl mt-12">Astronomical</div>
-            <div className="mt-8 flex flex-wrap gap-6 justify-evenly text-black px-32">
-                <div className="card">
-                    <div>
-                        <img src={sunrise} className="weather-icon" alt="" />
-                    </div>
-                    <div className="text-2xl">Sunrise:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {astroWeatherData &&
-                            astroWeatherData.astronomy.astro.sunrise}{" "}
-                    </div>
-                </div>
-                <div className="card">
-                    <div>
-                        <img src={sunset} className="weather-icon" alt="" />
-                    </div>
-                    <div className="text-2xl">Sunset:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {astroWeatherData &&
-                            astroWeatherData.astronomy.astro.sunset}{" "}
-                    </div>
-                </div>
-                <div className="card">
-                    <div>
-                        <img src={moonrise} className="weather-icon" alt="" />
-                    </div>
-                    <div className="text-2xl">Moonrise:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {astroWeatherData &&
-                            astroWeatherData.astronomy.astro.moonrise}{" "}
-                    </div>
-                </div>
-                <div className="card">
-                    <div>
-                        <img src={moonset} className="weather-icon" alt="" />
-                    </div>
-                    <div className="text-2xl">Moonset:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {astroWeatherData &&
-                            astroWeatherData.astronomy.astro.moonset}{" "}
-                    </div>
-                </div>
-                <div className="card">
-                    <div>
-                        <img src={moonphase} className="weather-icon" alt="" />
-                    </div>
-                    <div className="text-2xl">Moon Phase:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {astroWeatherData &&
-                            astroWeatherData.astronomy.astro.moon_phase}{" "}
-                    </div>
-                </div>
-                <div className="card">
-                    <div>
-                        <img src={moonlight} className="weather-icon" alt="" />
-                    </div>
-                    <div className="text-2xl">Moon Illumination:</div>
-                    <div className="text-xl" id="dataOutputCloudCover">
-                        {astroWeatherData &&
-                            astroWeatherData.astronomy.astro
-                                .moon_illumination}{" "}
-                        %
-                    </div>
-                </div>
-            </div>
-            {/* ASTRONOMICAL END */}
+          
 
             {/* FORECAST START */}
-            {/* <div className="text-black text-4xl mt-12">Forecast</div>
-            <div className="mt-8 flex flex-wrap gap-6 justify-evenly text-black px-32">
+            {/* <div className="text-gray-200 text-4xl mt-12">Forecast</div>
+            <div className="mt-8 flex flex-wrap gap-6 justify-evenly text-gray-200 px-32">
                 <div className="card">
                     <div>
                         <img src={cloud} className="weather-icon" alt="" />
